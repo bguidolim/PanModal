@@ -116,5 +116,13 @@ public extension PanModalPresentable where Self: UIViewController {
     func panModalDidDismiss() {
 
     }
+    
+    var shouldShowScrollIndicator: Bool {
+        return true
+    }
+
+    var bottomScrollInset: CGFloat? {
+        return nil
+    }
 }
 #endif

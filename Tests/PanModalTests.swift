@@ -59,6 +59,8 @@ class PanModalTests: XCTestCase {
         XCTAssertEqual(vc.shouldRoundTopCorners, false)
         XCTAssertEqual(vc.showDragIndicator, false)
         XCTAssertEqual(vc.shouldRoundTopCorners, false)
+        XCTAssertEqual(vc.shouldShowScrollIndicator, true)
+        XCTAssertEqual(vc.bottomScrollInset, nil)
         XCTAssertEqual(vc.cornerRadius, 8.0)
     }
 

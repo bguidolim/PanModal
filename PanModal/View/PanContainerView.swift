@@ -15,7 +15,6 @@ import UIKit
  having to do those changes directly on the view
  */
 class PanContainerView: UIView {
-    
     private weak var presentedViewController: UIViewController?
 
     init(presentedView: UIView, frame: CGRect) {
@@ -25,12 +24,12 @@ class PanContainerView: UIView {
     }
 
     @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     override func accessibilityPerformEscape() -> Bool {
-        var shouldPerforEscape: Bool = true
+        var shouldPerforEscape = true
         if let panModalPresentable = presentedViewController as? PanModalPresentable {
             shouldPerforEscape = panModalPresentable.allowsDragToDismiss || panModalPresentable.allowsTapToDismiss
             if shouldPerforEscape {
@@ -48,7 +47,6 @@ private extension UIResponder {
 }
 
 extension UIView {
-
     /**
      Convenience property for retrieving a PanContainerView instance
      from the view hierachy
@@ -58,6 +56,5 @@ extension UIView {
             view is PanContainerView
         }) as? PanContainerView
     }
-
 }
 #endif

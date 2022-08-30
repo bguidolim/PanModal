@@ -98,7 +98,7 @@ class UserGroupViewController: UITableViewController, PanModalPresentable {
     }
 
     var scrollIndicatorInsets: UIEdgeInsets {
-        let bottomOffset = presentingViewController?.bottomLayoutGuide.length ?? 0
+        let bottomOffset = presentingViewController?.view.safeAreaInsets.bottom ?? 0
         return UIEdgeInsets(top: headerView.frame.size.height, left: 0, bottom: bottomOffset, right: 0)
     }
 
